@@ -2,7 +2,9 @@ import React from "react";
 import Square from "./Square.jsx";
 import Row from "./Row";
 import { PlayerTurnProvider } from "./PlayerTurnContext.jsx";
-
+import RestartButton from "./RestartButton.jsx";
+import WinnerAnnouncement from "./WinnerAnnouncement.jsx"
+import TurnIndicator from "./TurnIndicator.jsx";
 function App() {
   const style = {
     display: "flex",
@@ -14,6 +16,7 @@ function App() {
   return (
     <div className="App" style={style}>
       <PlayerTurnProvider>
+        <TurnIndicator></TurnIndicator>
         <Row>
           <Square position="0" />
           <Square position="1" />
@@ -29,6 +32,9 @@ function App() {
           <Square position="7"></Square>
           <Square position="8"></Square>
         </Row>
+
+        <RestartButton>Restart</RestartButton>
+        <WinnerAnnouncement></WinnerAnnouncement>
       </PlayerTurnProvider>
     </div>
   );
